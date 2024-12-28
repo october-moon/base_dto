@@ -3,7 +3,7 @@
 ## 安装
 
 ```shell
-$ composer require october_moon/base_dto -vvv
+$ composer require october-moon/base_dto -vvv
 ```
 
 ## License
