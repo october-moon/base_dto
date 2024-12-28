@@ -1,41 +1,51 @@
 <?php
 
+/*
+ * This file is part of the october-moon/base_dto
+ */
+
 namespace OctoberMoon\BaseDto;
 
 class BaseDto
 {
     /**
      * 记录数据.
+     *
      * @var mixed
      */
     private $data;
 
     /**
      * 状态.
+     *
      * @var string
      */
     private $status = 'success';
 
     /**
      * 返回信息.
+     *
      * @var string
      */
     private $message;
 
     /**
      * 请求状态code.
+     *
      * @var int
      */
     private $code;
 
     /**
      * 字段错误提示信息.
+     *
      * @var mixed
      */
     private $error = [];
 
     /**
      * 服务器时间.
+     *
      * @var string
      */
     private $currentTime;
@@ -46,7 +56,7 @@ class BaseDto
         $this->message = $msg;
         $this->data = $data;
         $this->currentTime = date('Y-m-d H:i:s');
-        if (intval($code) !== 200) {
+        if (200 !== intval($code)) {
             $this->status = 'error';
         }
     }
@@ -77,6 +87,7 @@ class BaseDto
 
     /**
      * 状态码
+     *
      * @return int
      */
     public function getCode()
@@ -111,6 +122,7 @@ class BaseDto
 
     /**
      * 转json.
+     *
      * @return string
      */
     public function toJson()
